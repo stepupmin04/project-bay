@@ -1,0 +1,55 @@
+<form [formGroup]="form">
+    <div class="row mt-2">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+            ชื่อ
+            <div>
+                <input class="form-control" type="text" pInputText placeholder="ชื่อ" formControlName="firstName"
+                    maxlength="30" />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+            นามสกุล
+            <div>
+                <input class="form-control" type="text" pInputText placeholder="นามสกุล" formControlName="lastName"
+                    maxlength="30" />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+            Email
+            <div>
+                <input class="form-control" type="text" pInputText placeholder="email" formControlName="email"
+                    maxlength="30" />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+            ที่อยู่
+            <div>
+                <textarea class="form-control" rows="5" cols="30" pTextarea placeholder="ที่อยู่"
+                    formControlName="address" maxlength="140"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="row mt-2 text-center">
+    <div>
+        <p-toast />
+        <p-confirmdialog [style]="{width: '20vw'}" />
+        <p-button label="ยกเลิก" severity="danger" (onClick)="cancel()" [outlined]="true" />
+        <p-button class="m-2" label="{{labelButton}}" (onClick)="confirm1($event)" [disabled]="!form.valid" />
+    </div>
+</div>

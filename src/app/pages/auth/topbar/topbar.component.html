@@ -1,0 +1,35 @@
+<div class="content">
+    <app-menu [menuVisible]="menuVisible"></app-menu>
+</div>
+<p-toolbar aria-label="Actions">
+    <div class="p-toolbar-group-start">
+        <p-button icon="pi pi-bars" class="mr-2 text-0" [outlined]="true" (onClick)="toggleMenu()" size="small"
+            [style]="{'color': '#000000'}" />
+
+    </div>
+    <ng-template #end>
+        <p-button icon="pi pi-user" (onClick)="op.toggle($event);getDateUser();" rounded />
+        <p-overlayPanel #op>
+            <div class="flex flex-column gap-3 w-20rem">
+                <span
+                    class="text-xl font-bold text-900 block mb-2 text-center border-bottom-1 border-400">Profile</span>
+                <div>
+                    <i class="pi pi-users m-2"></i>
+                    {{user.username}}
+                </div>
+                <div>
+                    <i class="pi pi-calendar-times m-2"></i>
+                    {{date}}
+                </div>
+                <div>
+                    <p-button label="Logout" icon="pi pi-sign-out" severity="danger" [style]="{'width': '20rem'}"
+                        (onClick)="logout();" />
+                </div>
+            </div>
+        </p-overlayPanel>
+    </ng-template>
+
+</p-toolbar>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

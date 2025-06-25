@@ -1,0 +1,33 @@
+<div class="row mt-2">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+        <p-card>
+            <div class="grid nested-grid text-center">
+                <h2>Login</h2>
+            </div>
+            <br />
+            <form [formGroup]="form">
+                <div class="text-center">
+                    <input type="text" pInputText placeholder="Username" class="form-control"
+                        formControlName="username" />
+                </div>
+                <br />
+                <div class="text-center">
+                    <input pInputText id="password" type="password" placeholder="password"
+                        class="form-control form-control-search font-bold" autocomplete="password"
+                        formControlName="password" />
+                </div>
+            </form>
+            <div class="text-left">
+                <span class="error-msg">{{ error }}</span>
+            </div>
+            <br />
+            <div class="text-center">
+                <p-button label="login" (onClick)="login()" [disabled]="!form.valid" />
+            </div>
+        </p-card>
+    </div>
+    <div class="col-4">
+    </div>
+</div>
