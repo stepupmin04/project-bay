@@ -5,7 +5,7 @@ import { catchError, finalize, throwError } from 'rxjs';
 
 
 export const handleErrorInterceptor: HttpInterceptorFn = (req, next) => {
-  const skipApis = ['https://aab1-2001-fb1-18d-2b75-557f-c27e-74c2-943e.ngrok-free.app/login'];
+  const skipApis = ['http://localhost:3000/login'];
   const shouldSkip = skipApis.includes(req.url);
 
   const requestCount = 0;

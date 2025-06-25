@@ -11,7 +11,7 @@ export class AuthApiService {
   constructor(private http: HttpClient) { }
 
   login(): Observable<HttpResponse<any>> {
-        const localUrl = `https://aab1-2001-fb1-18d-2b75-557f-c27e-74c2-943e.ngrok-free.app/login`;
+        const localUrl = `http://localhost:3000/login`;
         return this.http.get<HttpResponse<any>>(localUrl, { observe: 'response' });
   }
 }
